@@ -7,6 +7,9 @@ env:
   PROJECT_NAME: "Monte Carlo estimation of pi"
   AUTHOR: "Kaustubh Daruri"
   PI: 3.142857
+  INPUT_FILE_NAME: get_pi.cpp
+  COMPILED_FILE_NAME: get_pi_o
+  OUTPUT_FILE_NAME: data.txt
   
   
   
@@ -53,7 +56,7 @@ jobs:
           
       - name: compile 
         run: |
-          g++ get_pi.cpp -o get_pi_o -lm
+          g++ $INPUT_FILE_NAME -o $COMPILED_FILE_NAME -lm
           
       - name: check contents
         run: |
@@ -61,7 +64,15 @@ jobs:
       
       - name: run
         run: |
-          ./get_pi_o
+          ./$COMPILED_FILE_NAME >> $OUTPUT_FLE_NAME
+          cat $OUTPUT_FILE_NAME
+          
+      - name: check contents
+        run: |
+          ls
+          
+      
+      
           
       
       
