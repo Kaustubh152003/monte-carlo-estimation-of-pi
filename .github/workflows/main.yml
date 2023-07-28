@@ -7,6 +7,9 @@ on:
   
 env:
   PROJECT_NAME: "Monte Carlo estimation of pi"
+  AUTHOR: "Kaustubh Daruri"
+  PI: 3.142857
+  
   
   
 jobs:
@@ -14,22 +17,27 @@ jobs:
     name: initial_testing
     runs-on: ubuntu-latest
     steps:
-      - name: check
+      - name: initial check
         run: |
           echo "Initializing....."
           echo "3"
           echo "2"
           echo "1"
         
-      - name: print_project
-        run: echo "$PROJECT_NAME"
+      - name: print project name
+        run: |
+          echo "$PROJECT_NAME"
+          
+      - name: list_variables
+        run: |
+          print env
         
         
 #   stage_2:
 #     runs-on: ubuntu-latest
 #     needs: 
 #       - stage_1
-#     name: "Compile get pi"
+#     name: "Compile code"
 #     steps: 
 #       - name: install_gcc
 #         run: |
