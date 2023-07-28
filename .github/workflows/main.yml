@@ -15,10 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check
-        run: echo "Initializing....." echo "Second echo"
+        run: |
+          echo "Initializing....."
+          echo "3"
+          echo "2"
+          echo "1"
         
       - name: print_project
-        run: echo "monte-carlo-estimation-of-pi"
+        run: echo "$PROJECT_NAME"
         
         
 #   stage_2:
@@ -28,6 +32,6 @@ jobs:
 #     name: "Compile get pi"
 #     steps: 
 #       - name: install_gcc
-#         run: 
-#           - 
+#         run: |
+#           
     
