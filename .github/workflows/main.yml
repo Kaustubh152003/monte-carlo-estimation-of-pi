@@ -41,7 +41,7 @@ jobs:
         run: |
           whereis gcc
           which gcc
-          gcc -version
+          gcc --version
           
       - name: compile 
         run: |
