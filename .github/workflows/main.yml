@@ -28,7 +28,7 @@ jobs:
           
       - name: list_variables
         run: |
-          print env
+          printenv
         
         
 #   stage_2:
