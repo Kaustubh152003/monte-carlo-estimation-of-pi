@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+    - main
+    
+  workflow_dispatch:
+  
+jobs:
+  initial_testing:
+    name: initial_testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: check
+        run: echo "Initializing....."
+        
+      - name: print_project
+        run: echo "monte-carlo-estimation-of-pi"
+    
