@@ -5,14 +5,29 @@ on:
     
   workflow_dispatch:
   
+env:
+  PROJECT_NAME: "Monte Carlo estimation of pi"
+  
+  
 jobs:
-  initial_testing:
+  stage_1:
     name: initial_testing
     runs-on: ubuntu-latest
     steps:
       - name: check
-        run: echo "Initializing....."
+        run: echo "Initializing....." echo "Second echo"
         
       - name: print_project
         run: echo "monte-carlo-estimation-of-pi"
+        
+        
+#   stage_2:
+#     runs-on: ubuntu-latest
+#     needs: 
+#       - stage_1
+#     name: "Compile get pi"
+#     steps: 
+#       - name: install_gcc
+#         run: 
+#           - 
     
