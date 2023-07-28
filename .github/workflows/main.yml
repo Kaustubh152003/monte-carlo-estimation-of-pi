@@ -37,10 +37,6 @@ jobs:
     needs: 
       - stage_1
     steps: 
-      - name: install_gcc
-        run: |
-          apt-get update
-          
       - name: check gcc version
         run: |
           whereis gcc
