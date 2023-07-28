@@ -64,7 +64,7 @@ jobs:
       
       - name: run
         run: |
-          ./$COMPILED_FILE_NAME >> $OUTPUT_FLE_NAME
+          ./$COMPILED_FILE_NAME >> $OUTPUT_FILE_NAME
           cat $OUTPUT_FILE_NAME
           
       - name: check contents
