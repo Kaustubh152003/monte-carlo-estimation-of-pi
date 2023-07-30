@@ -74,8 +74,8 @@ jobs:
       - name: upload output file
         uses: actions/upload-artifact@v3
         with:
-          name: $OUTPUT_FILE_NAME
-          path: $OUTPUT_FILE_NAME
+          name: answer.txt
+          path: answer.txt
           
   stage_3:
       name: "testing"
