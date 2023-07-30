@@ -10,6 +10,9 @@ env:
   INPUT_FILE_NAME: get_pi.cpp
   COMPILED_FILE_NAME: get_pi_o
   OUTPUT_FILE_NAME: answer.txt
+  TEST_INPUT_FILE_NAME: get_pi.cpp
+  TEST_COMPILED_FILE_NAME: get_pi_o
+  TEST_OUTPUT_FILE_NAME: answer.txt
   
   
   
@@ -57,19 +60,11 @@ jobs:
       - name: compile 
         run: |
           g++ $INPUT_FILE_NAME -o $COMPILED_FILE_NAME -lm
-          
-      - name: check contents
-        run: |
-          ls
       
       - name: run
         run: |
           ./$COMPILED_FILE_NAME >> $OUTPUT_FILE_NAME
           cat $OUTPUT_FILE_NAME
-          
-      - name: check contents
-        run: |
-          ls
           
       - name: upload output file
         uses: actions/upload-artifact@v3
@@ -89,7 +84,27 @@ jobs:
         - name: Download a Build Artifact
           uses: actions/download-artifact@v2.1.1
           with:
-            name: $OUTPUT_FILE_NAME
+            name: answer.txt
+            
+        - name: check file content
+          run: |
+            cat answer.txt
+        
+        - name: check gcc version
+          run: |
+            whereis gcc
+            which gcc
+            gcc --version
+
+        - name: compile 
+          run: |
+            g++ $TEST_INPUT_FILE_NAME -o $TEST_COMPILED_FILE_NAME -lm
+
+        - name: run
+          run: |
+            ./$TEST_COMPILED_FILE_NAME >> $TEST_OUTPUT_FILE_NAME
+            cat $TEST_OUTPUT_FILE_NAME
+          
           
       
   
