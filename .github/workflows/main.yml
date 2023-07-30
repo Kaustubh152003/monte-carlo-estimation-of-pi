@@ -9,7 +9,7 @@ env:
   PI: 3.142857
   INPUT_FILE_NAME: get_pi.cpp
   COMPILED_FILE_NAME: get_pi_o
-  OUTPUT_FILE_NAME: data.txt
+  OUTPUT_FILE_NAME: answer.txt
   
   
   
@@ -70,6 +70,29 @@ jobs:
       - name: check contents
         run: |
           ls
+          
+      - name: upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: $OUTPUT_FILE_NAME
+          path: $OUTPUT_FILE_NAME
+          
+  stage_3:
+      name: "testing"
+      runs-on: ubuntu-latest
+      needs:
+        - stage_2
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+        
+        - name: Download a Build Artifact
+          uses: actions/download-artifact@v2.1.1
+          with:
+            name: $OUTPUT_FILE_NAME
+          
+      
+  
           
       
       
