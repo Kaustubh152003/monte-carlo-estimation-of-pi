@@ -10,9 +10,9 @@ env:
   INPUT_FILE_NAME: get_pi.cpp
   COMPILED_FILE_NAME: get_pi_o
   OUTPUT_FILE_NAME: answer.txt
-  TEST_INPUT_FILE_NAME: get_pi.cpp
-  TEST_COMPILED_FILE_NAME: get_pi_o
-  TEST_OUTPUT_FILE_NAME: answer.txt
+  TEST_INPUT_FILE_NAME: tests_for_getpi.cpp
+  TEST_COMPILED_FILE_NAME: tests_for_getpi_o
+  TEST_OUTPUT_FILE_NAME: test_result.txt
   
   
   
